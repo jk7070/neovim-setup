@@ -60,16 +60,18 @@ return packer.startup(function(use)
   -- use "romainl/Apprentice" -- colour scheme
   use "savq/melange-nvim" -- colour scheme
 
-  -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin:w
+  use "ellisonleao/gruvbox.nvim"
+
+  -- cmp plugins and snippets
+  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use "hrsh7th/cmp-nvim-lsp"
+  
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- treesitter
   use {
@@ -89,6 +91,13 @@ return packer.startup(function(use)
       }
     end,
     requires = {'nvim-tree/nvim-web-devicons'}
+  }
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
   }
 
   -- Automatically set up your configuration after cloning packer.nvim

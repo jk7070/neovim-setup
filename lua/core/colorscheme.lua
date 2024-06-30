@@ -1,2 +1,3 @@
--- vim.o.background = "dark" -- or "light" for light
-vim.cmd("colorscheme melange")
+vim.o.background = "dark" -- or "light" for light
+vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme lunaperche")
