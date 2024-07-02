@@ -12,28 +12,14 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Setup lazy.nvim
-local plugins = {
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+require("lazy").setup({
+  spec = {
+    -- import your plugins
+    { import = "plugins" },
   },
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
-}
-local opts = {}
-
-require("lazy").setup(plugins, opts)
-
--- require("lazy").setup({
---   spec = {
---     -- import your plugins
---     { import = "plugins" },
---   },
---   -- Configure any other settings here. See the documentation for more details.
---   -- colorscheme that will be used when installing plugins.
---   install = { colorscheme = { "habamax" } },
---   -- automatically check for plugin updates
---   checker = { enabled = true },
--- })
+  -- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  -- install = { colorscheme = { "habamax" } },
+  -- automatically check for plugin updates
+  checker = { enabled = true },
+})
