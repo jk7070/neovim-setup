@@ -36,6 +36,19 @@ return {
 
       -- python
       lspconfig.jedi_language_server.setup({})
+
+      -- golang
+      lspconfig.gopls.setup({
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+          },
+        },
+      })
     end
   }
 }
