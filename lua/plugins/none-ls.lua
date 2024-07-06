@@ -13,9 +13,9 @@ return {
         null_ls.builtins.formatting.black,
         null_ls.builtins.diagnostics.pylint,
 
-        -- javascript & typescript
+        -- javascript, typescript, HTML
         null_ls.builtins.formatting.prettier,
-        -- null_ls.builtins.diagnostics.eslint_d,
+        -- null_ls.builtins.diagnostics.biome,
       },
     })
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
