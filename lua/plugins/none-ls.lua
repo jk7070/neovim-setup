@@ -11,7 +11,7 @@ return {
 
         -- python
         null_ls.builtins.formatting.black,
-        null_ls.builtins.diagnostics.pylint,
+        null_ls.builtins.diagnostics.flake8,
 
         -- javascript, typescript, HTML
         null_ls.builtins.formatting.prettier,
