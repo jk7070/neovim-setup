@@ -16,7 +16,7 @@ return {
 					"rust_analyzer",
 					"gopls",
 					"jedi_language_server",
-					"tsserver",
+					"ts_ls",
 					"html",
 					"htmx",
 				},
@@ -39,7 +39,7 @@ return {
 			})
 
 			-- javascript / typescript
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 
