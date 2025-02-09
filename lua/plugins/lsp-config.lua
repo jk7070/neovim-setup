@@ -18,7 +18,6 @@ return {
 					"jedi_language_server",
 					"ts_ls",
 					"html",
-					"htmx",
 				},
 			})
 		end,
@@ -44,10 +43,6 @@ return {
 			})
 
 			lspconfig.html.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.htmx.setup({
 				capabilities = capabilities,
 			})
 
