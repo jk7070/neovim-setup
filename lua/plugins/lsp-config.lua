@@ -15,7 +15,8 @@ return {
 					"jsonls",
 					"rust_analyzer",
 					"gopls",
-					"jedi_language_server",
+					-- "jedi_language_server",
+          "ruff",
 					"ts_ls",
 					"html",
 				},
@@ -55,7 +56,10 @@ return {
 			})
 
 			-- python
-			lspconfig.jedi_language_server.setup({
+			-- lspconfig.jedi_language_server.setup({
+			-- 	capabilities = capabilities,
+			-- })
+			lspconfig.ruff.setup({
 				capabilities = capabilities,
 			})
 
