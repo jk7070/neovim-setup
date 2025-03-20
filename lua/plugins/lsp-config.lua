@@ -59,9 +59,22 @@ return {
 			-- lspconfig.jedi_language_server.setup({
 			-- 	capabilities = capabilities,
 			-- })
-			lspconfig.ruff.setup({
-				capabilities = capabilities,
-			})
+
+			-- lspconfig.ruff.setup({
+			--   -- init_options = {
+			--   --      settings = {
+			--   --        logLevel = 'debug',
+			--   --      }
+			--   --    },
+			--   --    capabilities = capabilities,
+			--    })
+      require('lspconfig').ruff.setup({
+        init_options = {
+          settings = {
+            -- Ruff language server settings go here
+          }
+        }
+      })
 
 			-- golang
 			lspconfig.gopls.setup({
