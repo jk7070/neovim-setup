@@ -24,6 +24,18 @@ return {
     end,
   },
   {
+    "mrcjkb/rustaceanvim",
+    version = '^5', -- Recommended
+    lazy = false,   -- This plugin is already lazy
+  },
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
@@ -63,13 +75,6 @@ return {
       lspconfig.ruff.setup({
         capabilities = capabilities,
       })
-      -- require('lspconfig').ruff.setup({
-      --   init_options = {
-      --     settings = {
-      --       -- Ruff language server settings go here
-      --     }
-      --   }
-      -- })
 
       -- golang
       lspconfig.gopls.setup({

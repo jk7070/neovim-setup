@@ -15,8 +15,8 @@ return {
         null_ls.builtins.formatting.goimports,
 
         -- python
-        -- null_ls.builtins.formatting.ruff,
-        require('none-ls.formatting.ruff').with { extra_args = {'--extend-select', 'I'} },
+        null_ls.builtins.diagnostics.mypy,
+        require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
         require('none-ls.formatting.ruff_format'),
 
         -- javascript, typescript, HTML
