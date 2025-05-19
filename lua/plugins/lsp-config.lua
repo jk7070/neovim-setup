@@ -1,27 +1,28 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     config = function()
       require("mason").setup()
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
-    -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "jsonls",
-          "rust_analyzer",
-          "gopls",
-          "jedi_language_server",
-          "ruff",
-          "ts_ls",
-          "html",
-        },
-      })
-    end,
+    "mason-org/mason-lspconfig.nvim",
+    -- require("mason-lspconfig").setup({
+    --   automatic_enable = {
+    --     "lua_ls",
+    --   }
+    --   -- ensure_installed = {
+    --   --   "lua_ls",
+    --   --   "jsonls",
+    --   --   "rust_analyzer",
+    --   --   "gopls",
+    --   --   "jedi_language_server",
+    --   --   "pyright",
+    --   --   "ruff",
+    --   --   "ts_ls",
+    --   --   "html",
+    --   -- },
+    -- })
   },
   {
     "mrcjkb/rustaceanvim",
@@ -44,6 +45,7 @@ return {
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 
       -- lua
       lspconfig.lua_ls.setup({
@@ -71,6 +73,10 @@ return {
       lspconfig.jedi_language_server.setup({
         capabilities = capabilities,
       })
+
+      -- lspconfig.pyright.setup({
+      --   capabilities = capabilities,
+      -- })
 
       lspconfig.ruff.setup({
         capabilities = capabilities,

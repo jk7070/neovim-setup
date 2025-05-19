@@ -3,6 +3,7 @@ require("config.lazy")
 
 vim.filetype.add({
   extension = {
+    testbench = "yaml",
     op = "yaml",
     dc = "yaml",
     ac = "yaml",

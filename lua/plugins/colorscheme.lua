@@ -1,9 +1,20 @@
 return {
   -- "ellisonleao/gruvbox.nvim",
-  "shaunsingh/nord.nvim",
+  -- "shaunsingh/nord.nvim",
+  -- 'AlexvZyl/nordic.nvim',
+  'olivercederborg/poimandres.nvim',
+  lazy = false,
   priority = 1000,
 
   config = function()
-    vim.cmd.colorscheme("nord")
+    require('poimandres').setup {
+      -- leave this setup function empty for default config
+      -- or refer to the configuration section
+      -- for configuration options
+    }
+  end,
+
+  init = function()
+    vim.cmd.colorscheme("poimandres")
   end,
 }
