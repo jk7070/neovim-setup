@@ -15,7 +15,14 @@ return {
         null_ls.builtins.formatting.goimports,
 
         -- python
-        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.diagnostics.mypy.with({
+          extra_args = function(params)
+            return {
+              "--config-file",
+              params.root .. "/pyproject.toml",
+            }
+          end,
+        }),
         require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
         require('none-ls.formatting.ruff_format'),
 
