@@ -1,42 +1,5 @@
 return {
   {
-    "mason-org/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
-  },
-  {
-    "mason-org/mason-lspconfig.nvim",
-    -- require("mason-lspconfig").setup({
-    --   automatic_enable = {
-    --     "lua_ls",
-    --   }
-    --   -- ensure_installed = {
-    --   --   "lua_ls",
-    --   --   "jsonls",
-    --   --   "rust_analyzer",
-    --   --   "gopls",
-    --   --   "jedi_language_server",
-    --   --   "pyright",
-    --   --   "ruff",
-    --   --   "ts_ls",
-    --   --   "html",
-    --   -- },
-    -- })
-  },
-  {
-    "mrcjkb/rustaceanvim",
-    version = '^5', -- Recommended
-    lazy = false,   -- This plugin is already lazy
-  },
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-    init = function()
-      vim.g.rustfmt_autosave = 1
-    end
-  },
-  {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
