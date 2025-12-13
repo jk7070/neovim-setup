@@ -102,3 +102,16 @@ vim.lsp.config("lua_ls", {
 })
 -- Enable the server
 vim.lsp.enable("lua_ls")
+
+-- Setup for system verilog
+vim.lsp.config("svlangserver", {
+  cmd = { "svlangserver" },
+  filetypes = { "systemverilog", "verilog" },
+  root_markers = {
+    ".svlangserver",
+    ".git",
+  },
+  on_attach = common_on_attach,
+})
+
+vim.lsp.enable("svlangserver")
