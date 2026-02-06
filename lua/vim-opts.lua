@@ -8,15 +8,6 @@ vim.cmd("set clipboard=unnamedplus")
 
 vim.g.mapleader = " "
 
--- Auto-detect and activate .venv in project directory
-vim.api.nvim_create_autocmd('VimEnter', {
-  callback = function()
-    local venv_path = vim.fn.getcwd() .. '/.venv/bin/python'
-    if vim.fn.filereadable(venv_path) == 1 then
-      vim.notify("Loading project .venv file: " .. venv_path)
-      vim.g.python3_host_prog = venv_path
-    else
-      vim.notify("No .venv found at: " .. venv_path)
-    end
-  end,
-})
+-- Keybinding to show diagnostics in a floating window
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { noremap = true, silent = true })
+
